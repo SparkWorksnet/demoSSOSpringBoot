@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Demo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+    <div class="hidden-xs" style="margin-top: 300px"></div>
+    <div class="gray-bg dashbard-1 text-center">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div class="hidden-xs" style="margin-top: 50px"></div>
+            <div class="lockscreen animated fadeInDown">
+                <div>
+                    <img th:src="@{/img/sparkworks-trans.png}" src="../static/img/sparkworks-trans.png"
+                         style="width: 400px"/>
+                </div>
+                <div>
+                    <div class="middle-box text-center animated fadeInDown">
+                        <h1 th:text="${status}"></h1>
+                        <h3 class="font-bold" th:text="${error}"></h3>
+
+                        <div class="error-desc" th:text="${message}">
+                            The server encountered something unexpected that didn't allow it to complete the request. We
+                            apologize.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs" style="margin-top: 100px"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

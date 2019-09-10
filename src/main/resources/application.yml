@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+spring:
+  thymeleaf:
+    cache: false
+
+security:
+  oauth2:
+    client:
+      clientId:
+      clientSecret:
+      accessTokenUri: ${sparks.aa.address}/aa/oauth/token
+      userAuthorizationUri: ${sparks.aa.address}/aa/oauth/authorize
+      auto-approve-scopes: all
+      scope: read
+    resource:
+      userInfoUri: ${sparks.aa.address}/aa/user
+      tokenInfoUri: ${sparks.aa.address}/aa/oauth/check_token
+      preferTokenInfo: true
+
+sparks:
+  aa:
+    address: https://sso.sparkworks.net
